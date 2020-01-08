@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name: Webpack Encore
+ * Plugin Name: Webpack Encore for WordPress
  * Plugin URI: https://phatkoala.uk/webpack-encore-for-wordpress
  * Description: Manage your theme's assets.
  * Version: 1.0
  * Author: Stewart Walter
- * Author URI: https://phatkoala.uk
+ * Author URI: https://phatkoala.uk/
  */
 
 if (!defined('ABSPATH')) {
@@ -25,12 +25,12 @@ class WebpackEncore
     /**
      * @var array
      */
-    private $assets = array();
+    private $assets = [ ];
 
     /**
      * @var array
      */
-    private $entries = array();
+    private $entries = [ ];
 
     public static function getInstance()
     {
@@ -153,7 +153,7 @@ class WebpackEncore
      */
     public function entry($entry, $key)
     {
-        $entries = array();
+        $entries = [ ];
 
         if (isset($this->entries[$entry][$key])) {
             foreach ($this->entries[$entry][$key] as $asset) {
@@ -170,7 +170,7 @@ class WebpackEncore
     public function enqueue_entry_css($entry)
     {
         foreach ($this->entry($entry, 'css') as $key => $asset) {
-            wp_enqueue_style(sprintf('%s-%d', $entry, $key), $asset, array(), null);
+            wp_enqueue_style(sprintf('%s-%d', $entry, $key), $asset, [ ], null);
         }
     }
 
@@ -180,7 +180,7 @@ class WebpackEncore
     public function enqueue_entry_js($entry)
     {
         foreach ($this->entry($entry, 'js') as $key => $asset) {
-            wp_enqueue_script(sprintf('%s-%d', $entry, $key), $asset, array(), null);
+            wp_enqueue_script(sprintf('%s-%d', $entry, $key), $asset, [ ], null);
         }
     }
 }

@@ -1,0 +1,12 @@
+{
+  "name": "phat-koala/webpack-encore-for-wordpress",
+  "description": "Webpack Encore for WordPress",
+  "type": "wordpress-plugin",
+  "license": "GPL-3.0-or-later",
+  "keywords": [ ],
+  "homepage": "https://phatkoala.uk/",
+  "minimum-stability": "dev",
+  "require": {
+    "php": "^7.2"
+  }
+}
