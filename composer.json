@@ -1,5 +1,5 @@
 {
-  "name": "phat-koala/webpack-encore-for-wordpress",
+  "name": "phatkoala/webpack-encore-for-wordpress",
   "description": "Webpack Encore for WordPress",
   "type": "wordpress-plugin",
   "license": "GPL-3.0-or-later",
